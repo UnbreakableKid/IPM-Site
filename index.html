@@ -5,240 +5,328 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>IPM Project</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="css/bootstrap.min.css">
 
-		<style>
-			html {
-			  box-sizing: border-box;
-			}
-			
-			*, *:before, *:after {
-			  box-sizing: inherit;
-			}
-			
+<head>
+	<title>IPM Project</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- For dropdown menu -->
+	<style>
+	
+		.dropdown {
+			opacity: 0;
+			position: absolute;
+			width: 500px;
+			z-index: 2;
+			background: rgb(207, 204, 204);
+
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			height: 3rem;
+			margin-top: 2rem;
+			padding: 0.5rem;
+
+			transform: translateX(-40%);
+			transition: opacity .15s ease-out;
+
+
+		}
+
+		.dropdown-item a {
+			width: 100%;
+			height: 100%;
+		}
+
+		.has-dropdown .selectme:hover .dropdown{
+			visibility: visible;
+		}
+
+		.has-dropdown:focus-within .dropdown {
+			opacity: 1;
+			pointer-events: auto;
+		}
+	</style>
+	<style>
+		html {
+			box-sizing: border-box;
+		}
+
+		*,
+		*:before,
+		*:after {
+			box-sizing: inherit;
+		}
+
+		.column {
+			float: left;
+			width: 25%;
+			margin-bottom: 16px;
+			padding: 0 8px;
+		}
+
+		@media screen and (max-width: 650px) {
 			.column {
-			  float: left;
-			  width: 25%;
-			  margin-bottom: 16px;
-			  padding: 0 8px;
-			}
-			
-			@media screen and (max-width: 650px) {
-			  .column {
 				width: 100%;
 				display: block;
-			  }
 			}
-			
-			.card {
-			  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-			}
-			
-			.container {
-			  padding: 0 16px;
-			}
-			
-			.container::after, .row::after {
-			  content: "";
-			  clear: both;
-			  display: table;
-			}
-			
-			.title {
-			  color: grey;
-			}
-			
-			.button {
-			  border: none;
-			  outline: 0;
-			  display: inline-block;
-			  padding: 8px;
-			  color: white;
-			  background-color: #000;
-			  text-align: center;
-			  cursor: pointer;
-			  width: 100%;
-			}
-			
-			.button:hover {
-			  background-color: #555;
-			}
-			</style>
+		}
 
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+		.container {
+			padding: 0 16px;
+		}
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+		.container::after,
+		.row::after {
+			content: "";
+			clear: both;
+			display: table;
+		}
 
-				<!-- Header
+		.title {
+			color: grey;
+		}
+
+		.button {
+			border: none;
+			outline: 0;
+			display: inline-block;
+			padding: 8px;
+			color: white;
+			background-color: #000;
+			text-align: center;
+			cursor: pointer;
+			width: 100%;
+		}
+
+		.button:hover {
+			background-color: #555;
+		}
+	</style>
+
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header
 					<header id="header" class="alt">
 						<span class="logo"><img src="images/logo.svg" alt="" /></span>
 						<h1>IPM</h1>
 					</header> -->
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul>
-							<li><a href="#intro" class="active">Introduction</a></li>
-							<li><a href="#team">Team Members</a></li>
-							<li><a href="#first">Process</a></li>
-							<li><a href="#cta">Assignments</a></li>
+		<!-- Nav -->
+		<nav id="nav">
+			<ul>
+				<li><a href="#intro" class="active">Introduction</a></li>
+				<li><a href="#team">Team Members</a></li>
+				<li><a href="#first">Process</a></li>
+				<!-- <li><a href="#cta">Assignments</a></li> -->
+				<li class="nav-item has-dropdown">
+
+					<a href="#" class ="selectme">Assignments</a>
+
+					<ul class="dropdown">
+
+						<li class="dropdown-item">
+							<a href="#a1">Assignment 1</a>
+						</li>
+						<li class="dropdown-item">
+							<a href="#a2">Assignment 2</a>
+						</li>
+
+					</ul>
+				</li>
+			</ul>
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+			<!-- Introduction -->
+			<section id="intro" class="main">
+				<div class="spotlight">
+					<div class="content">
+						<header class="major">
+							<h2>Group 2 - Lab Class 1</h2>
+						</header>
+						<p>Sed lorem ipsum dolor sit amet nullam consequat feugiat consequat magna
+							adipiscing magna etiam amet veroeros. Lorem ipsum dolor tempus sit cursus.
+							Tempus nisl et nullam lorem ipsum dolor sit amet aliquam.</p>
+						<ul class="actions">
+							<li><a href="generic.html" class="button">Learn More</a></li>
 						</ul>
-					</nav>
+					</div>
+					<span class="image"><img src="images/pic01.jpg" alt="" /></span>
+				</div>
+			</section>
 
-				<!-- Main -->
-					<div id="main">
-						<!-- Introduction -->
-							<section id="intro" class="main">
-								<div class="spotlight">
-									<div class="content">
-										<header class="major">
-											<h2>Group 2 - Lab Class 1</h2>
-										</header>
-										<p>Sed lorem ipsum dolor sit amet nullam consequat feugiat consequat magna
-										adipiscing magna etiam amet veroeros. Lorem ipsum dolor tempus sit cursus.
-										Tempus nisl et nullam lorem ipsum dolor sit amet aliquam.</p>
-										<ul class="actions">
-											<li><a href="generic.html" class="button">Learn More</a></li>
-										</ul>
-									</div>
-									<span class="image"><img src="images/pic01.jpg" alt="" /></span>
-								</div>
-							</section>
+			<!-- Team Members -->
+			<section id="team" class="main">
+				<header class="major">
+					<h2>Team Members</h2>
+				</header>
 
-						<!-- Team Members -->
-							<section id="team" class="main">
-								<header class="major">
-									<h2>Team Members</h2>
-								</header>
-								
-								<div class="row">
-									<div class="column">
-									  <div class="card">
-										<img src="images/Marta_P.jpg" style="width:100%">
-										<div class="container">
-										  <h2>Marta Paz</h2>
-										  <p class="title">49861</p>
-										</div>
-									  </div>
-									</div>
-								  
-									<div class="column">
-									  <div class="card">
-										<img src="images/Ines_G.jpeg" style="width:100%">
-										<div class="container">
-										  <h2>Inês Góis</h2>
-										  <p class="title">50696</p>
-										</div>
-									  </div>
-									</div>
-
-									<div class="column">
-										<div class="card">
-										  <img src="images/pic02.jpg" alt="Mike" style="width:100%">
-										  <div class="container">
-											<h2>Pedro Aires</h2>
-											<p class="title">51068</p>
-										  </div>
-										</div>
-									  </div>
-									
-									<div class="column">
-									  <div class="card">
-										<img src="images/pic02.jpg" alt="Mike" style="width:100%">
-										<div class="container">
-										  <h2>João Pacheco</h2>
-										  <p class="title">56982</p>
-										</div>
-									  </div>
-									</div>
-								  </div>
-								
-							</section>
-
-						<!-- Process -->
-							<section id="first" class="main special">
-								<header class="major">
-									<h2>Magna veroeros</h2>
-								</header>
-								<ul class="features">
-									<li>
-										<span class="icon solid major style1 fa-code"></span>
-										<h3>The Idea</h3>
-										<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
-									</li>
-									<li>
-										<span class="icon major style3 fa-copy"></span>
-										<h3>The Drafts</h3>
-										<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
-									</li>
-									<li>
-										<span class="icon major style5 fa-gem"></span>
-										<h3>The Finale</h3>
-										<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.</p>
-									</li>
-								</ul>
-								<footer class="major">
-									<ul class="actions special">
-										<li><a href="generic.html" class="button">Learn More</a></li>
-									</ul>
-								</footer>
-							</section>
-
-					
-						<!-- Assignments -->
-							<section id="cta" class="main special">
-								<header class="major">
-									<h2>Assignments</h2>
-									<!-- <p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
-									posuere. Nulla massa urna, fermentum eget quam aliquet.</p> -->
-								</header>
-								<footer class="major">
-									<ul class="actions special">
-										<li><a href="generic.html" class="button"> Good and bad design</a></li>
-										<li><a href="generic.html" class="button"> Assignment 2</a></li>
-									</ul>
-								</footer>
-							</section>
-
-							<section id="cta" class="main special">
-								<header class="major">
-									<h2>Congue imperdiet</h2>
-									<p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
-									posuere. Nulla massa urna, fermentum eget quam aliquet.</p>
-								</header>
-								<footer class="major">
-									<ul class="actions special">
-										<li><a href="generic.html" class="button primary">Get Started</a></li>
-										<li><a href="generic.html" class="button">Learn More</a></li>
-									</ul>
-								</footer>
-							</section>
-
+				<div class="row">
+					<div class="column">
+						<div class="card">
+							<img src="images/Marta_P.jpg" style="width:100%">
+							<div class="container">
+								<h2>Marta Paz</h2>
+								<p class="title">49861</p>
+							</div>
+						</div>
 					</div>
 
-				<!-- Footer -->
-					<footer id="footer">
-									<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-					</footer>
+					<div class="column">
+						<div class="card">
+							<img src="images/Ines_G.jpeg" style="width:100%">
+							<div class="container">
+								<h2>Inês Góis</h2>
+								<p class="title">50696</p>
+							</div>
+						</div>
+					</div>
 
-			</div>
+					<div class="column">
+						<div class="card">
+							<img src="images/pic02.jpg" alt="Mike" style="width:100%">
+							<div class="container">
+								<h2>Pedro Aires</h2>
+								<p class="title">51068</p>
+							</div>
+						</div>
+					</div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+					<div class="column">
+						<div class="card">
+							<img src="images/pic02.jpg" alt="Mike" style="width:100%">
+							<div class="container">
+								<h2>João Pacheco</h2>
+								<p class="title">56982</p>
+							</div>
+						</div>
+					</div>
+				</div>
 
-	</body>
+			</section>
+
+			<!-- Process -->
+			<section id="first" class="main special">
+				<header class="major">
+					<h2>Magna veroeros</h2>
+				</header>
+				<ul class="features">
+					<li>
+						<span class="icon solid major style1 fa-code"></span>
+						<h3>The Idea</h3>
+						<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed
+							consequat.</p>
+					</li>
+					<li>
+						<span class="icon major style3 fa-copy"></span>
+						<h3>The Drafts</h3>
+						<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed
+							consequat.</p>
+					</li>
+					<li>
+						<span class="icon major style5 fa-gem"></span>
+						<h3>The Finale</h3>
+						<p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed
+							consequat.</p>
+					</li>
+				</ul>
+				<footer class="major">
+					<ul class="actions special">
+						<li><a href="generic.html" class="button">Learn More</a></li>
+					</ul>
+				</footer>
+			</section>
+
+
+			<!-- Assignments -->
+			<section id="cta" class="main special">
+				<header class="major">
+					<h2>Assignments</h2>
+					<!-- <p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
+									posuere. Nulla massa urna, fermentum eget quam aliquet.</p> -->
+				</header>
+				<footer class="major">
+					<ul class="actions special">
+						<li><a href="generic.html" class="button"> Good and bad design</a></li>
+						<li><a href="generic.html" class="button"> Assignment 2</a></li>
+					</ul>
+				</footer>
+			</section>
+
+			<section id="a1" class="main special">
+				<header class="major">
+					<h2>Other Assignment way</h2>
+					<p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
+						posuere. Nulla massa urna, fermentum eget quam aliquet.</p>
+				</header>
+				<footer class="major">
+					<ul class="actions special">
+
+						<li><a href="pdfs/random test.pdf" class="button primary" target="_blank">Click Me for PDF</a>
+						</li>
+						<li><a href="pdfs/random test.pdf" class="button primary" target="_blank">Click Me for PDF</a>
+						</li>
+						<li><a href="pdfs/random test.pdf" class="button primary" target="_blank">Click Me for PDF</a>
+						</li>
+						<li><a href="pdfs/random test.pdf" class="button primary" target="_blank">Click Me for PDF</a>
+						</li>
+					</ul>
+				</footer>
+			</section>
+
+			<section id="a2" class="main special">
+				<header class="major">
+					<h2>Other Assignment way</h2>
+					<p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
+						posuere. Nulla massa urna, fermentum eget quam aliquet.</p>
+				</header>
+				<footer class="major">
+					<ul class="actions special">
+
+						<li><a href="pdfs/random test.pdf" class="button primary" target="_blank">Click Me for PDF</a>
+						</li>
+						<li><a href="pdfs/random test.pdf" class="button primary" target="_blank">Click Me for PDF</a>
+						</li>
+						<li><a href="pdfs/random test.pdf" class="button primary" target="_blank">Click Me for PDF</a>
+						</li>
+						<li><a href="pdfs/random test.pdf" class="button primary" target="_blank">Click Me for PDF</a>
+						</li>
+					</ul>
+				</footer>
+			</section>
+
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
 </html>
