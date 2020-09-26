@@ -8,8 +8,8 @@
 }
 
 .loader {
-  border: 40px solid #f9edea; /* Light pink */
-  border-top: 40px solid #efa8b0; /* pink */
+  border: 30px solid #f9edea; /* Light pink */
+  border-top: 30px solid #efa8b0; /* pink */
   border-radius: 50%;
   width: 200px;
   height: 200px;
