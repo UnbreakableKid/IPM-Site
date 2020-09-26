@@ -13,8 +13,7 @@
   border-radius: 50%;
   width: 150px;
   height: 150px;
-  margin: 50px;
-  /*animation: spin 5s linear infinite;*/
+  margin: auto;
 }
 
 .loader:hover {
