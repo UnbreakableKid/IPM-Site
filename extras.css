@@ -8,11 +8,11 @@
 }
 
 .loader {
-  border: 20px solid #f9edea; /* Light pink */
-  border-top: 20px solid #efa8b0; /* pink */
+  border: 40px solid #f9edea; /* Light pink */
+  border-top: 40px solid #efa8b0; /* pink */
   border-radius: 50%;
-  width: 241px;
-  height: 241px;
+  width: 200px;
+  height: 200px;
   animation: spin 5s linear infinite;
 }
 
