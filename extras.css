@@ -25,7 +25,7 @@
   width: 557px;
   height: 746px;
   position: relative;
-  display: inline;
+  display: inline-block;
   margin: 0px;
 }
 .bulb .light {
@@ -33,7 +33,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 0;
+  z-index: 99;
 }
 .bulb:hover .light {
   display: inline;
