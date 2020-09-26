@@ -13,6 +13,7 @@
   border-radius: 50%;
   width: 200px;
   height: 200px;
+  margin: 50px;
   animation: spin 5s linear infinite;
 }
 
