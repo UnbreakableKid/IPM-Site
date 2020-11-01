@@ -1,303 +1,323 @@
-﻿<!DOCTYPE HTML>
+﻿<!DOCTYPE html>
 <!--
 	Stellar by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
+  <head>
+    <title>IPM Project</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="extras.css" />
 
-<head>
-	<title>IPM Project</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="extras.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- For dropdown menu -->
+    <style>
+      .dropdown {
+        opacity: 0;
+        position: absolute;
+        width: 500px;
+        z-index: 2;
+        background: rgb(207, 204, 204);
 
-	<!-- For dropdown menu -->
-	<style>
-		.dropdown {
-			opacity: 0;
-			position: absolute;
-			width: 500px;
-			z-index: 2;
-			background: rgb(207, 204, 204);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 3rem;
+        margin-top: 2rem;
+        padding: 0.5rem;
 
-			display: flex;
-			align-items: center;
-			justify-content: space-around;
-			height: 3rem;
-			margin-top: 2rem;
-			padding: 0.5rem;
+        transform: translateX(-40%);
+        transition: opacity 0.15s ease-out;
+      }
 
-			transform: translateX(-40%);
-			transition: opacity .15s ease-out;
+      .dropdown-item a:hover {
+        width: 100%;
+        height: 100%;
+      }
 
+      .has-dropdown:hover .selectme:hover .dropdown {
+        visibility: visible;
+      }
 
-		}
+      .has-dropdown:hover .dropdown {
+        opacity: 1;
+        pointer-events: auto;
+      }
+    </style>
+    <style>
+      html {
+        box-sizing: border-box;
+      }
 
-		.dropdown-item a:hover {
-			width: 100%;
-			height: 100%;
-		}
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
 
-		.has-dropdown:hover .selectme:hover .dropdown {
-			visibility: visible;
-		}
+      .column {
+        float: left;
+        width: 25%;
+        margin-bottom: 16px;
+        padding: 0 8px;
+      }
 
-		.has-dropdown:hover .dropdown {
-			opacity: 1;
-			pointer-events: auto;
-		}
-	</style>
-	<style>
-		html {
-			box-sizing: border-box;
-		}
+      @media screen and (max-width: 650px) {
+        .column {
+          width: 100%;
+          display: block;
+        }
+      }
 
-		*,
-		*:before,
-		*:after {
-			box-sizing: inherit;
-		}
+      .container {
+        padding: 0 16px;
+      }
 
-		.column {
-			float: left;
-			width: 25%;
-			margin-bottom: 16px;
-			padding: 0 8px;
-		}
+      .container::after,
+      .row::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
 
-		@media screen and (max-width: 650px) {
-			.column {
-				width: 100%;
-				display: block;
-			}
-		}
+      .title {
+        color: grey;
+      }
 
-		.container {
-			padding: 0 16px;
-		}
+      .button {
+        border: none;
+        outline: 0;
+        display: inline-block;
+        padding: 8px;
+        color: white;
+        background-color: #000;
+        text-align: center;
+        cursor: pointer;
+        width: 100%;
+      }
 
-		.container::after,
-		.row::after {
-			content: "";
-			clear: both;
-			display: table;
-		}
+      .button:hover {
+        background-color: #555;
+      }
 
-		.title {
-			color: grey;
-		}
+      #gemwrapper {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+      }
+    </style>
 
-		.button {
-			border: none;
-			outline: 0;
-			display: inline-block;
-			padding: 8px;
-			color: white;
-			background-color: #000;
-			text-align: center;
-			cursor: pointer;
-			width: 100%;
-		}
+    <noscript>
+      <link rel="stylesheet" href="assets/css/noscript.css"
+    /></noscript>
+  </head>
 
-		.button:hover {
-			background-color: #555;
-		}
-
-		#gemwrapper {
-			margin-left: auto;
-			margin-right: auto;
-			width: 100%;
-		}
-	</style>
-
-	<noscript>
-		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-</head>
-
-<body class="is-preload">
-
-	<!-- Wrapper -->
-	<div id="wrapper">
-
-		<!-- Header
+  <body class="is-preload">
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Header
 					<header id="header" class="alt">
 						<span class="logo"><img src="images/logo.svg" alt="" /></span>
 						<h1>IPM</h1>
 					</header> -->
 
-		<!-- Nav -->
-		<nav id="nav">
-			<ul>
-				<li><a href="#intro" class="active">Introduction</a></li>
-				<li><a href="#team">Team Members & Assignments</a></li>
-				<li><a href="#first">Process</a></li>
-				<!-- <li><a href="#cta">Assignments</a></li> -->
-				<li class="nav-item has-dropdown">
+      <!-- Nav -->
+      <nav id="nav">
+        <ul>
+          <li><a href="#intro" class="active">Introduction</a></li>
+          <li><a href="#team">Team Members & Assignments</a></li>
+          <li><a href="#first">Process</a></li>
+          <!-- <li><a href="#cta">Assignments</a></li> -->
+          <li class="nav-item has-dropdown">
+            <a href="#ProjectSubmissions" class="selectme"
+              >Project Submissions</a
+            >
 
-					<a href="#ProjectSubmissions" class="selectme">Project Submissions</a>
+            <ul class="dropdown">
+              <li class="dropdown-item">
+                <a href="#Phase1">Phase 1</a>
+              </li>
+              <li class="dropdown-item">
+                <a href="#Phase2">Phase 2</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
 
-					<ul class="dropdown">
-
-						<li class="dropdown-item">
-							<a href="#Phase1">Phase 1</a>
-						</li>
-						<li class="dropdown-item">
-							<a href="#Phase2">Phase 2</a>
-						</li>
-
-					</ul>
-				</li>
-			</ul>
-		</nav>
-
-		<!-- Main -->
-		<div id="main">
-			<!-- Introduction -->
-			<section id="intro" class="main">
-				<div class="spotlight">
-					<div class="content">
-						<header class="major">
-							<h2>Hungry Readers: Group 2 - Lab Class 1</h2>							
-						</header>
-						<p> We are a group of students who got together to carry out a project given in the IPM course.
-							This project consists in a web application where readers of every kind can discuss, trade 
-							and discover books with other fellow readers. </p>
-						<p> By promoting interaction not only among readers,
-							but also among authors, we hope to encourage people to share their favorite books with others,
-							as well as to take recommendations from their peers.</p>
-						<p> Because reading doesn't have to be a lonely hobby! </p>
-						<!-- <ul class="actions">
+      <!-- Main -->
+      <div id="main">
+        <!-- Introduction -->
+        <section id="intro" class="main">
+          <div class="spotlight">
+            <div class="content">
+              <header class="major">
+                <h2>Hungry Readers: Group 2 - Lab Class 1</h2>
+              </header>
+              <p>
+                We are a group of students who got together to carry out a
+                project given in the IPM course. This project consists in a web
+                application where readers of every kind can discuss, trade and
+                discover books with other fellow readers.
+              </p>
+              <p>
+                By promoting interaction not only among readers, but also among
+                authors, we hope to encourage people to share their favorite
+                books with others, as well as to take recommendations from their
+                peers.
+              </p>
+              <p>Because reading doesn't have to be a lonely hobby!</p>
+              <!-- <ul class="actions">
 							<li><a href="generic.html" class="button">Learn More</a></li>
 						</ul> -->
-					</div>
-					<span class="image"><img src="images/LogoImage.jpg" alt="" width="70%" height="70%"/></span>
-				</div>
-			</section>
+            </div>
+            <span class="image"
+              ><img src="images/LogoImage.jpg" alt="" width="70%" height="70%"
+            /></span>
+          </div>
+        </section>
 
-			<!-- Team Members -->
-			<section id="team" class="main">
-				<header class="major">
-					<h2>Team Members & Assignments</h2>
-				</header>
+        <!-- Team Members -->
+        <section id="team" class="main">
+          <header class="major">
+            <h2>Team Members & Assignments</h2>
+          </header>
 
-				<div class="row">
-					<div class="column">
-						<div class="card">
-							<img src="images/Marta_P.jpg" style="width:100%">
-							<div class="container">
-								<div class="vertical-center">
-									<h2>Marta Paz</h2>
-									<p class="title">49861</p>
-									<a href="pdfs/Assignment_1_Marta_Paz.pdf">Assignment 1: Good and Bad Design</a>
-								</div>
-							</div>
-						</div>
-					</div>
+          <div class="row">
+            <div class="column">
+              <div class="card">
+                <img src="images/Marta_P.jpg" style="width: 100%" />
+                <div class="container">
+                  <div class="vertical-center">
+                    <h2>Marta Paz</h2>
+                    <p class="title">49861</p>
+                    <a href="pdfs/Assignment_1_Marta_Paz.pdf"
+                      >Assignment 1: Good and Bad Design</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
 
-					<div class="column">
-						<div class="card">
-							<img src="images/Ines_G.jpeg" style="width:100%">
-							<div class="container">
-								<h2>Inês Góis</h2>
-								<p class="title">50696</p>
-								<a href="pdfs/Assignment_1_MariaG.pdf">Assignment 1: Good and Bad Design</a>
-							</div>
-						</div>
-					</div>
+            <div class="column">
+              <div class="card">
+                <img src="images/Ines_G.jpeg" style="width: 100%" />
+                <div class="container">
+                  <h2>Inês Góis</h2>
+                  <p class="title">50696</p>
+                  <a href="pdfs/Assignment_1_MariaG.pdf"
+                    >Assignment 1: Good and Bad Design</a
+                  >
+                </div>
+              </div>
+            </div>
 
-					<div class="column">
-						<div class="card">
-							<img src="images/Pedro_A.jpg" style="width:100%">
-							<div class="container">
-								<h2>Pedro Aires</h2>
-								<p class="title">51068</p>
-								<a href="pdfs/Assignment_1_Pedro.pdf">Assignment 1: Good and Bad Design</a>
-							</div>
-						</div>
-					</div>
+            <div class="column">
+              <div class="card">
+                <img src="images/Pedro_A.jpg" style="width: 100%" />
+                <div class="container">
+                  <h2>Pedro Aires</h2>
+                  <p class="title">51068</p>
+                  <a href="pdfs/Assignment_1_Pedro.pdf"
+                    >Assignment 1: Good and Bad Design</a
+                  >
+                </div>
+              </div>
+            </div>
 
-					<div class="column">
-						<div class="card">
-							<img src="images/Joao_P.png" alt="Joao" style="width:100%">
-							<div class="container">
-								<h2>João Pacheco</h2>
-								<p class="title">56982</p>
-								<a href="pdfs/Assignment_1_Joao.pdf">Assignment 1: Good and Bad Design</a>
-							</div>
-						</div>
-					</div>
-				</div>
+            <div class="column">
+              <div class="card">
+                <img src="images/Joao_P.png" alt="Joao" style="width: 100%" />
+                <div class="container">
+                  <h2>João Pacheco</h2>
+                  <p class="title">56982</p>
+                  <a href="pdfs/Assignment_1_Joao.pdf"
+                    >Assignment 1: Good and Bad Design</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-			</section>
-
-			<!-- Process -->
-			<section id="first" class="main special">
-				<header class="major">
-					<h2>Process</h2>
-				</header>
-				<ul class="features">
-					<li>
-						<div class="bulb">
-							<img src="images/no_light.jpg" alt="Bulb" style="width:100%" />
-							<img src="images/light.jpg" class="light" alt="BulbLight" style="width:100%">
-						</div>
-						<!--<span class="icon solid major style1 fa-code"></span>-->
-						<h3>The Idea</h3>
-						<p>
-							Our ideia came from analysing some reading and books app and observing that there were missing some points on those apps. So, we decided to create an 
-							app that combines what those apps offer plus some additional features that will make for a better user experience.
-							<!--such as the possibility to create book clubs or facilitate the exchange 
+        <!-- Process -->
+        <section id="first" class="main special">
+          <header class="major">
+            <h2>Process</h2>
+          </header>
+          <ul class="features">
+            <li>
+              <div class="bulb">
+                <img src="images/no_light.jpg" alt="Bulb" style="width: 100%" />
+                <img
+                  src="images/light.jpg"
+                  class="light"
+                  alt="BulbLight"
+                  style="width: 100%"
+                />
+              </div>
+              <!--<span class="icon solid major style1 fa-code"></span>-->
+              <h3>The Idea</h3>
+              <p>
+                Our ideia came from analysing some reading and books app and
+                observing that there were missing some points on those apps. So,
+                we decided to create an app that combines what those apps offer
+                plus some additional features that will make for a better user
+                experience.
+                <!--such as the possibility to create book clubs or facilitate the exchange 
 							of books among friends.-->
-						</p>
-					</li>
-					<li>
-
-						<!--<span class="icon major style3 fa-copy"></span>-->
-						<div class="loader"></div>
-						<h3>The Drafts</h3>
-						<p>
-							Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed
-							consequat.
-						</p>
-					</li>
-					<li>
-						<div id="gemwrapper" style="margin-top:20%;">
-
-							<!--<span class="icon major style3 fa-copy"></span>-->
-							<span style="color:  Dodgerblue; ">
-								<i class="far fa-gem fa-5x" style="font-size: 7.5rem;"></i>
-							</span>
-							<br>
-							<br>
-							<h3 style="padding-top: 30px;">Final</h3>
-							<p>
-								Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros
-								sed
-								consequat.
-							</p>
-						</div>
-					</li>
-				</ul>
-				<!-- <footer class="major">
+              </p>
+            </li>
+            <li>
+              <!--<span class="icon major style3 fa-copy"></span>-->
+              <div class="loader"></div>
+              <h3>The Drafts</h3>
+              <p>
+                Sed lorem amet ipsum dolor et amet nullam consequat a feugiat
+                consequat tempus veroeros sed consequat.
+              </p>
+            </li>
+            <li>
+              <div id="gemwrapper" style="margin-top: 20%">
+                <!--<span class="icon major style3 fa-copy"></span>-->
+                <span style="color: Dodgerblue">
+                  <i class="far fa-gem fa-5x" style="font-size: 7.5rem"></i>
+                </span>
+                <br />
+                <br />
+                <h3 style="padding-top: 30px">Final</h3>
+                <p>
+                  Sed lorem amet ipsum dolor et amet nullam consequat a feugiat
+                  consequat tempus veroeros sed consequat.
+                </p>
+              </div>
+            </li>
+          </ul>
+          <!-- <footer class="major">
 					<ul class="actions special">
 						<li><a href="generic.html" class="button">Learn More</a></li>
 					</ul>
 				</footer> -->
-			</section>
+        </section>
 
-
-			<!-- Assignments -->
-			<!-- <section id="cta" class="main special">
+        <!-- Assignments -->
+        <!-- <section id="cta" class="main special">
 				<header class="major">
 					<h2>Assignments</h2> -->
-			<!-- <p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
+        <!-- <p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
 									posuere. Nulla massa urna, fermentum eget quam aliquet.</p> -->
-			<!-- </header>
+        <!-- </header>
 				<footer class="major">
 					<ul class="actions special">
 						<li><a href="generic.html" class="button"> Good and bad design</a></li>
@@ -306,44 +326,68 @@
 				</footer>
 			</section> -->
 
-			<section id="ProjectSubmissions" class="main special">
-				<header class="major">
-					<h2>Project Submissions</h2>
-					<p>Here, you can find the project submissions of the diferent phases of the project, divided by the different phases.</p>
-				</header>
+        <section id="ProjectSubmissions" class="main special">
+          <header class="major">
+            <h2>Project Submissions</h2>
+            <p>
+              Here, you can find the project submissions of the diferent phases
+              of the project, divided by the different phases.
+            </p>
+          </header>
 
-				<section id="Phase1" class="main">
-					<header class="major">
-						<h2>Phase 1</h2>
-					</header>
+          <section id="Phase1" class="main">
+            <header class="major">
+              <h2>Phase 1</h2>
+            </header>
 
-					<div class="row">
-						<div class="column">
-							<div class="card">
-								<a href="pdfs/Relatório_F1.pdf" target="_blank">
-									<img src="images/proposal.webp" alt="Project Proposal" style="width:100%">
-								</a>
-								<div class="container">
-									<h2>Project Proposal</h2>
-								</div>
-							</div>
-						</div>
-						<div class="column">
-							<div class="card">
-								<a href="pdfs/Relatório_F2.pdf" target="_blank">
-									<img src="images/usertasks.png" alt="Project Proposal" style="width:100% ;">
-								</a>
-								<div class="container">
-									<h2>User & Task analysis</h2>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
+            <div class="row">
+              <div class="column">
+                <div class="card">
+                  <a href="pdfs/Relatório_F1.pdf" target="_blank">
+                    <img
+                      src="images/proposal.webp"
+                      alt="Project Proposal"
+                      style="width: 100%"
+                    />
+                  </a>
+                  <div class="container">
+                    <h2>Project Proposal</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="column">
+                <div class="card">
+                  <a href="pdfs/Relatório_F2.pdf" target="_blank">
+                    <img
+                      src="images/usertasks.png"
+                      alt="Project Proposal"
+                      style="width: 100%"
+                    />
+                  </a>
+                  <div class="container">
+                    <h2>User & Task analysis</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="column">
+                <div class="card">
+                  <a href="pdfs/Relatório_F2.pdf" target="_blank">
+                    <img
+                      src="images/prototype.png"
+                      alt="Project Proposal"
+                      style="width: 100%; height: 100%"
+                    />
+                  </a>
+                  <div class="container">
+                    <h2>Prototype 1</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
 
-			</section>
-
-			<!-- <section id="a2" class="main special">
+        <!-- <section id="a2" class="main special">
 				<header class="major">
 					<h2>Other Assignment way</h2>
 					<p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
@@ -363,25 +407,23 @@
 					</ul>
 				</footer>
 			</section> -->
+      </div>
 
-		</div>
+      <!-- Footer -->
+      <footer id="footer">
+        <p class="copyright">
+          &copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.
+        </p>
+      </footer>
+    </div>
 
-		<!-- Footer -->
-		<footer id="footer">
-			<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-		</footer>
-
-	</div>
-
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
-
-</body>
-
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
